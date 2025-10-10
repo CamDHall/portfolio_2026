@@ -1,0 +1,72 @@
+/* Lightweight responsive portfolio CSS */
+:root{
+  /* Matcha palette */
+  --bg:#f5f8f4; /* soft tea paper */
+  --card:#ffffff; /* cards on light background */
+  --muted:#6b776b; /* subdued green-gray */
+  --accent:#4fa256; /* matcha green */
+  --text:#0b2a18; /* deep leaf */
+  --radius:10px;
+  --container:1100px;
+  --glass:rgba(79,162,86,0.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+.body-font{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{
+  margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+.container{max-width:var(--container);margin:0 auto;padding:2rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1rem;font-weight:700;letter-spacing:0.06em}
+.logo a{color:var(--accent);text-decoration:none;font-weight:700;display:inline-block}
+.logo a:hover,.logo a:focus{color:var(--accent);text-decoration:none;outline:none}
+.nav a{color:var(--muted);text-decoration:none;margin-left:1rem;padding:0.25rem}
+
+.resume-link{color:var(--accent);text-decoration:none;font-weight:700}
+.resume-link:hover,.resume-link:focus{color:var(--accent);text-decoration:none;outline:none}
+.nav a:hover, .nav a:focus{color:var(--text);outline:2px solid rgba(79,162,86,0.12);border-radius:6px}
+.site-header{backdrop-filter:blur(4px);position:sticky;top:0;padding:0.5rem 0;background:transparent;border-bottom:1px solid rgba(11,42,24,0.04)}
+.hero{padding:4rem 0}
+.hero-inner{display:grid;grid-template-columns:1fr 260px;gap:2rem;align-items:start}
+.hero-text .muted{color:var(--muted);margin:0}
+.hero-name{font-size:2.25rem;margin:0.25rem 0;font-weight:700}
+.hero-name .role{font-weight:500;color:var(--muted);font-size:0.9rem;margin-left:0.4rem}
+.lead{color:var(--muted);max-width:60ch}
+.cta-row{margin-top:1rem}
+.btn{background:var(--accent);color:#fff;padding:0.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:600}
+.btn:hover{filter:brightness(0.98)}
+.link{color:var(--accent);margin-left:1rem;text-decoration:none}
+.hero-meta{background:var(--glass);padding:1rem;border-radius:8px}
+.hero-meta dt{font-size:0.75rem;color:var(--muted)}
+.hero-meta dd{margin:0 0 0.75rem 0}
+.section{padding:1rem 0}
+.section h3{border-left:4px solid var(--accent);padding-left:0.75rem;margin-top:0}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;list-style:none;padding:0;margin:0}
+.skills li{background:rgba(255,255,255,0.02);padding:0.6rem;border-radius:8px}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(11,42,24,0.06);border:1px solid rgba(11,42,24,0.04)}
+.project-thumb{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;border:1px solid rgba(11,42,24,0.04)}
+.card h4{margin:0 0 0.5rem 0}
+.card p.meta{color:var(--muted);font-size:0.9rem;margin-top:0.5rem}
+.site-footer{padding:1rem 0;color:var(--muted)}
+.muted{color:var(--muted)}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+/* Experience / Jobs */
+.experience-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.job{background:linear-gradient(180deg,rgba(79,162,86,0.03),transparent);padding:1rem;border-radius:8px;border:1px solid rgba(11,42,24,0.03)}
+.job p{margin:0.5rem 0}
+.social-links{display:flex;gap:0.75rem;align-items:center}
+.social-link{display:inline-flex;gap:0.5rem;align-items:center;color:var(--muted);text-decoration:none;padding:0.25rem;border-radius:6px}
+.social-link svg{color:var(--accent);}
+.social-link:hover{color:var(--text);background:rgba(79,162,86,0.06)}
+.job-thumb{width:100%;height:140px;object-fit:cover;border-radius:6px;margin-bottom:0.75rem;border:1px solid rgba(11,42,24,0.04)}
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr}
+  .experience-list{grid-template-columns:1fr}
+  .container{padding:1rem}
+}

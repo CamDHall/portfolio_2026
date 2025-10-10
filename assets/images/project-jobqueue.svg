@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Distributed Job Queue screenshot">
+  <rect width="100%" height="100%" fill="#eaf6ec" />
+  <g fill="#4fa256" font-family="sans-serif">
+    <rect x="60" y="80" width="1080" height="120" rx="8" fill="#ffffff" stroke="#dfeede" />
+    <rect x="60" y="220" width="1080" height="120" rx="8" fill="#ffffff" stroke="#dfeede" />
+    <rect x="60" y="360" width="1080" height="120" rx="8" fill="#ffffff" stroke="#dfeede" />
+    <text x="80" y="160" fill="#0b2a18" font-size="36">Distributed Job Queue — Dashboard</text>
+    <text x="80" y="300" fill="#6b776b" font-size="24">Jobs in flight • Latency • Retries</text>
+  </g>
+</svg>
