@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Game Engine Tooling screenshot">
-  <rect width="100%" height="100%" fill="#f6f8f5" />
-  <g>
-    <rect x="80" y="80" width="480" height="560" rx="8" fill="#ffffff" stroke="#e6efe6" />
-    <rect x="640" y="80" width="480" height="560" rx="8" fill="#ffffff" stroke="#e6efe6" />
-    <text x="100" y="160" fill="#0b2a18" font-size="28">Tooling — Asset Prep</text>
-    <text x="660" y="160" fill="#6b776b" font-size="20">Memory layout optimizer</text>
-  </g>
-</svg>
