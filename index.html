@@ -5,8 +5,37 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cameron Hall — Senior Software Engineer</title>
   <meta name="description" content="I am a senior software engineer with extensive experience in development, project management, and leadership within the technology sector." />
-  <!-- Stylesheet served via jsDelivr from the GitHub repo. Replace CamDHall and branch (main) if needed. -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/css/styles.css">
+  <!-- During development load the local stylesheet so edits apply immediately.
+       In production the small script below will swap this to the jsDeliv r CDN URL.
+       To force a fresh copy during development, open DevTools -> Network -> Disable cache
+       (DevTools must remain open) or hard-refresh (Ctrl+F5). -->
+  <link id="site-style" rel="stylesheet" href="css/styles.css">
+  <script>
+    // Swap to jsDelivr in non-local environments so production benefits from the CDN.
+    (function(){
+      try {
+        var host = location.hostname;
+        // Use local files when running from file:// (host === '') or localhost/127.0.0.1
+        if (host !== '' && host !== 'localhost' && host !== '127.0.0.1') {
+          var link = document.getElementById('site-style');
+          if (link) {
+            link.href = 'https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/css/styles.css';
+          }
+          // Swap any images that have a data-cdn-src attribute to the CDN-hosted version.
+          try {
+            var cdnImgs = document.querySelectorAll('img[data-cdn-src]');
+            for (var i = 0; i < cdnImgs.length; i++) {
+              var el = cdnImgs[i];
+              var cdn = el.getAttribute('data-cdn-src');
+              if (cdn) el.src = cdn;
+            }
+          } catch (e) { /* noop */ }
+        }
+      } catch (e) {
+        /* noop */
+      }
+    })();
+  </script>
   <!-- Google Fonts can be loaded directly or served via jsDelivr if you publish a local copy. Keeping direct Google Fonts for best performance. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +49,7 @@
         <nav class="nav">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -29,11 +58,9 @@
     <section class="hero" id="home">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="muted">Hi, I'm</p>
           <h2 class="hero-name">Cameron Hall<span class="role"> — Senior Software Engineer</span></h2>
           <p class="lead">I build reliable, scalable systems and low-latency C++ components. I also work fullstack and ship game tooling.</p>
           <p class="cta-row">
-            <a class="btn" href="#projects">See projects</a>
             <a class="link" href="#contact">Contact</a>
           </p>
         </div>
@@ -59,11 +86,11 @@
     <section class="section container" id="skills">
       <h3>Skills</h3>
       <ul class="skills">
-        <li><strong>Primary:</strong> .NET · NodeJS · Python</li>
-        <li><strong>Datastores:</strong> SQL · NoSQL</li>
-        <li><strong>Architectures:</strong> Microservices · Event-driven design · RESTful APIs</li>
-        <li><strong>Cloud / Infra:</strong> Azure (functions, Service Bus, DevOps)</li>
-        <li><strong>Frontend / Tools:</strong> React · Angular · Ionic</li>
+        <li><strong>Primary:</strong>.NET · NodeJS · Python · C++ · Unity</li>
+        <li><strong>Data:</strong>Postgres · TSQL · NoSQL</li>
+        <li><strong>Architectures:</strong>Microservices · Event-driven design · RESTful APIs</li>
+        <li><strong>Cloud / Infra:</strong>Azure · AWS · DigitalOcean · Docker · Github Actions</li>
+        <li><strong>Frontend / Tools:</strong>React · Angular · Ionic</li>
       </ul>
     </section>
 
@@ -71,49 +98,63 @@
       <h3>Experience</h3>
       <div class="experience-list">
         <article class="job card">
-          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/airstrip.webp" alt="Senior Software Engineer" loading="lazy">
+          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/itec.webp" alt="Senior Software Engineer" loading="lazy">
+          <h4>Senior Lead Software Engineer</h4>
+          <p class="meta">Unity, API design, .NET &amp; C++, Docker, CI/CD, React, Claude</p>
+          <p>Led a cross-platform development team and leveraged Claude AI to speed up development, generate clear documentation, and streamline technical problem-solving. Mentored interns and junior engineers in modern C++ practices, containerized dev environments, and cloud-native design. Architected CI/CD pipelines with Docker, Docker Compose, and GitHub Actions to deliver features across DigitalOcean and Azure. I also spearheaded a legacy-to-cloud modernization, migrating a 15-year-old VB.NET codebase to a fully containerized stack using PostgreSQL, ASP.NET Core, and React. On the performance side, I built a C++ web server with oatpp and integrated OpenCASCADE for advanced geometric modeling and CAD processing. I engineered a Unity WebGL app for browser-based CAD visualization which support multiple file formats backed by Dockerized services.</p>
+        </article>
+        <article class="job card">
+          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/paige.webp" alt="Senior Software Engineer" loading="lazy">
           <h4>Senior Software Engineer</h4>
-          <p class="meta">Lab integrations, API design, .NET &amp; Python testing, Python microservices, AWS→Azure migrations</p>
-          <p>I build third-party integrations to enable access to extensive laboratory networks across the United States. I spearhead initiatives to enhance .NET and Python testing methodologies, increasing code coverage for flagship products. I also lead the development of Python microservices that extract and process large datasets from AI services, improving system performance. Additionally, I architect and implement external-facing APIs for third-party integration, and drive migrations of cloud infrastructure from AWS to Azure.</p>
+          <p class="meta">API integrations, API design, Python microservices, AWS→Azure migration</p>
+          <p>I built third-party integrations to enable access to extensive laboratory networks across the United States. I spearheaded initiatives to enhance .NET and Python testing methodologies, resulting in increased code coverage for flagship products. I led the development of Python microservices that extracted and processed large datasets from AI services, thereby improving system performance. I architected and implemented external-facing APIs for third-party integration and drove cloud infrastructure migrations from AWS to Azure.</p>
         </article>
 
         <article class="job card">
-          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/bah.webp" alt=".Net Cloud Engineer" loading="lazy">
+          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/hak.webp" alt=".Net Cloud Engineer" loading="lazy">
           <h4>.Net Cloud Engineer</h4>
           <p class="meta">Azure microservices, ShipStation &amp; ChargeBee integrations, Azure Service Bus</p>
-          <p>Designed and implemented Azure microservices to handle product shipments and user identity services, optimizing reliability and scalability. Developed Azure .NET functions integrated with ShipStation and ChargeBee for streamlined order processing and billing, and troubleshooted message queuing issues in Azure Service Bus.</p>
+          <p>Architected and launched Azure microservices to manage product shipments and user identity services, boosting reliability and scalability. Engineered Azure .NET functions that interfaced with ShipStation and ChargeBee to streamline order processing and billing, and resolved Azure Service Bus message queuing issues.</p>
         </article>
 
         <article class="job card">
-          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/hak.webp" alt="Microsoft Applications Solution Developer II" loading="lazy">
+          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/ssfcu.webp" alt="Microsoft Applications Solution Developer II" loading="lazy">
           <h4>Microsoft Applications Solution Developer II</h4>
           <p class="meta">Administrative tools, Angular, .NET Core, mobile app work, Azure DevOps</p>
-          <p>Led design and development of administrative tools using Angular and .NET Core, improving operational efficiency. Contributed to a mobile app serving hundreds of thousands of users and optimized middleware applications to improve responsiveness. Managed Azure DevOps builds and releases for continuous delivery.</p>
+          <p>Drove design and development of administrative tools using Angular and .NET Core, boosting operational efficiency. Enhanced a mobile app serving hundreds of thousands of users and streamlined middleware applications to increase responsiveness. Orchestrated Azure DevOps builds and releases to ensure continuous delivery.</p>
         </article>
 
         <article class="job card">
-          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/kbr.webp" alt="Software Developer Contractor" loading="lazy">
+          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/saccs.webp" alt="Software Developer Contractor" loading="lazy">
           <h4>Software Developer Contractor</h4>
           <p class="meta">.NET Core APIs, React, legacy migrations, Roku integrations</p>
           <p>Architected .NET Core APIs to render dynamic React components, ported legacy .NET Framework sites to .NET Core, developed RESTful APIs for Roku, and maintained Razor views for consistent UX.</p>
         </article>
 
         <article class="job card">
-          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/nyu.webp" alt="Junior Software Developer and Internships" loading="lazy">
+          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/airstrip.webp" alt="Junior Software Developer and Internships" loading="lazy">
           <h4>Junior Software Developer &amp; Internships</h4>
           <p class="meta">Node.js, SQL, iOS/Android updates, Unity VR testing</p>
           <p>Built Node.js APIs and analytics tools, updated iOS/Android apps for compatibility, refactored SMS/notification flows, and conducted qualitative testing for Unity VR applications.</p>
         </article>
-
-        <article class="job card">
-          <img class="job-thumb" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/paige.webp" alt="Education" loading="lazy">
-          <h4>Education</h4>
-          <p class="meta">Wichita State University — Bachelor of Business Administration (Aug 2013 – Dec 2015)</p>
-          <p class="meta">New York University — Bachelor of Fine Arts (Jan 2016 – Dec 2017)</p>
+      </div>
+    </section>
+    <section class="section container" id="education">
+      <h3>Education</h3>
+      <div class="education-list">
+        <article class="card">
+          <img class="education-img" src="assets/images/wsu.webp" data-cdn-src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/wsu.webp" alt="Wichita State University logo" loading="lazy">
+          <h4>Wichita State University</h4>
+          <p class="meta">Bachelor of Business Administration — <time datetime="2013-08">Aug 2013</time> – <time datetime="2015-12">Dec 2015</time></p>
+        </article>
+        <article class="card">
+          <img class="education-img" src="assets/images/nyu.webp" data-cdn-src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/nyu.webp" alt="New York University logo" loading="lazy">
+          <h4>New York University</h4>
+          <p class="meta">Bachelor of Fine Arts — <time datetime="2016-01">Jan 2016</time> – <time datetime="2017-12">Dec 2017</time></p>
         </article>
       </div>
     </section>
-
+    <!--
     <section class="section container" id="projects">
       <h3>Projects</h3>
       <div class="projects-grid">
@@ -139,6 +180,7 @@
         </article>
       </div>
     </section>
+  -->
 
     <section class="section container" id="contact">
       <h3>Contact</h3>

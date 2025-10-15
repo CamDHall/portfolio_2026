@@ -18,6 +18,7 @@ body{
   background:var(--bg);
   color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;
 }
+#contact{margin-top:1rem}
 .container{max-width:var(--container);margin:0 auto;padding:2rem}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:1rem;font-weight:700;letter-spacing:0.06em}
@@ -29,7 +30,6 @@ body{
 .resume-link:hover,.resume-link:focus{color:var(--accent);text-decoration:none;outline:none}
 .nav a:hover, .nav a:focus{color:var(--text);outline:2px solid rgba(79,162,86,0.12);border-radius:6px}
 .site-header{backdrop-filter:blur(4px);position:sticky;top:0;padding:0.5rem 0;background:transparent;border-bottom:1px solid rgba(11,42,24,0.04)}
-.hero{padding:4rem 0}
 .hero-inner{display:grid;grid-template-columns:1fr 260px;gap:2rem;align-items:start}
 .hero-text .muted{color:var(--muted);margin:0}
 .hero-name{font-size:2.25rem;margin:0.25rem 0;font-weight:700}
@@ -42,10 +42,10 @@ body{
 .hero-meta{background:var(--glass);padding:1rem;border-radius:8px}
 .hero-meta dt{font-size:0.75rem;color:var(--muted)}
 .hero-meta dd{margin:0 0 0.75rem 0}
-.section{padding:1rem 0}
+.section{padding:0.5rem 0}
 .section h3{border-left:4px solid var(--accent);padding-left:0.75rem;margin-top:0}
-.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;list-style:none;padding:0;margin:0}
-.skills li{background:rgba(255,255,255,0.02);padding:0.6rem;border-radius:8px}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;list-style:none;padding:0;margin:0}
+.skills li{background:rgba(255,255,255,0.02);padding:0.3rem;border-radius:8px}
 .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .card{background:var(--card);padding:1rem;border-radius:var(--radius);box-shadow:0 6px 18px rgba(11,42,24,0.06);border:1px solid rgba(11,42,24,0.04)}
 .project-thumb{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;border:1px solid rgba(11,42,24,0.04)}
@@ -69,4 +69,17 @@ body{
   .skills{grid-template-columns:1fr}
   .experience-list{grid-template-columns:1fr}
   .container{padding:1rem}
+}
+
+/* Education section styles */
+.education-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:0.5rem}
+.education-list .card{padding:0.75rem;border-radius:8px}
+.education-list .meta{color:var(--muted);font-size:0.95rem;margin-top:0.25rem}
+@media (max-width:900px){
+  .education-list{grid-template-columns:1fr}
+}
+
+.education-img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;display:block}
+@media (max-width:900px){
+  .education-img{height:120px}
 }
