@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cameron Hall — Senior Software Engineer</title>
   <meta name="description" content="I am a senior software engineer with extensive experience in development, project management, and leadership within the technology sector." />
+  <style>
+    /* Inline defensive CSS: ensures education images can't grow unexpectedly on deployed hosts */
+    .education-list .card{overflow:hidden!important}
+    .education-img{width:100%!important;max-height:360px!important;object-fit:cover!important;display:block!important}
+    @media (max-width:900px){.education-img{max-height:240px!important}}
+  </style>
   <!-- During development load the local stylesheet so edits apply immediately.
        In production the small script below will swap this to the jsDeliv r CDN URL.
        To force a fresh copy during development, open DevTools -> Network -> Disable cache
@@ -143,12 +149,12 @@
       <h3>Education</h3>
       <div class="education-list">
         <article class="card">
-          <img class="education-img" src="assets/images/wsu.webp" data-cdn-src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/wsu.webp" alt="Wichita State University logo" loading="lazy">
+          <img class="education-img" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/wsu.webp" data-cdn-src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/wsu.webp" alt="Wichita State University logo" loading="lazy">
           <h4>Wichita State University</h4>
           <p class="meta">Bachelor of Business Administration — <time datetime="2013-08">Aug 2013</time> – <time datetime="2015-12">Dec 2015</time></p>
         </article>
         <article class="card">
-          <img class="education-img" src="assets/images/nyu.webp" data-cdn-src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/nyu.webp" alt="New York University logo" loading="lazy">
+          <img class="education-img" src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/nyu.webp" data-cdn-src="https://cdn.jsdelivr.net/gh/CamDHall/portfolio_2026@main/assets/images/nyu.webp" alt="New York University logo" loading="lazy">
           <h4>New York University</h4>
           <p class="meta">Bachelor of Fine Arts — <time datetime="2016-01">Jan 2016</time> – <time datetime="2017-12">Dec 2017</time></p>
         </article>
