@@ -73,13 +73,22 @@ body{
 
 /* Education section styles */
 .education-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:0.5rem}
-.education-list .card{padding:0.75rem;border-radius:8px}
+.education-list .card{padding:0.75rem;border-radius:8px;overflow:hidden}
 .education-list .meta{color:var(--muted);font-size:0.95rem;margin-top:0.25rem}
 @media (max-width:900px){
   .education-list{grid-template-columns:1fr}
 }
 
-.education-img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;display:block}
+.education-img{
+  width:100%;
+  aspect-ratio: 16/9;
+  height:auto;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:0.75rem;
+  display:block;
+  max-height:360px; /* defensive cap so images can't become huge */
+}
 @media (max-width:900px){
-  .education-img{height:120px}
+  .education-img{aspect-ratio:4/3;max-height:240px}
 }
