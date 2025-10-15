@@ -81,14 +81,13 @@ body{
 
 .education-img{
   width:100%;
-  aspect-ratio: 16/9;
-  height:auto;
+  height:140px;
   object-fit:cover;
-  border-radius:8px;
+  border-radius:6px;
   margin-bottom:0.75rem;
+  border:1px solid rgba(11,42,24,0.04);
   display:block;
-  max-height:360px; /* defensive cap so images can't become huge */
 }
 @media (max-width:900px){
-  .education-img{aspect-ratio:4/3;max-height:240px}
+  .education-img{height:120px}
 }

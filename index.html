@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cameron Hall — Senior Software Engineer</title>
   <meta name="description" content="I am a senior software engineer with extensive experience in development, project management, and leadership within the technology sector." />
+  <style>
+    /* Inline defensive CSS: ensures education images can't grow unexpectedly on deployed hosts */
+    .education-list .card{overflow:hidden!important}
+    .education-img{width:100%!important;max-height:360px!important;object-fit:cover!important;display:block!important}
+    @media (max-width:900px){.education-img{max-height:240px!important}}
+  </style>
   <!-- During development load the local stylesheet so edits apply immediately.
        In production the small script below will swap this to the jsDeliv r CDN URL.
        To force a fresh copy during development, open DevTools -> Network -> Disable cache
