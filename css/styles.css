@@ -72,8 +72,8 @@ body{
 }
 
 /* Education section styles */
-.education-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:0.5rem}
-.education-list .card{padding:0.75rem;border-radius:8px;overflow:hidden}
+.education-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:0.5rem;align-items:stretch}
+.education-list .card{padding:1rem;border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:0 6px 18px rgba(11,42,24,0.06);border:1px solid rgba(11,42,24,0.04)}
 .education-list .meta{color:var(--muted);font-size:0.95rem;margin-top:0.25rem}
 @media (max-width:900px){
   .education-list{grid-template-columns:1fr}
